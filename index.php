@@ -32,14 +32,12 @@ $result = $conn->query("SELECT * FROM tasks");
             echo "<li class='task $taskStatus'>";
             echo $row['task_name'];
 
-            // Добавляем форму для редактирования задачи
             echo "<form action='edit.php' method='post'>";
             echo "<input type='hidden' name='id' value='$taskId'>";
             echo "<input type='text' name='task' placeholder='Новое название' required>";
             echo "<button type='submit' class='edit-btn'><i class='fas fa-edit'></i></button>";
             echo "</form>";
 
-            // Добавляем кнопку для удаления задачи
             echo "<a href='delete.php?id=$taskId' class='delete-btn'><i class='fas fa-trash'></i></a>";
 
             echo "</li>";
